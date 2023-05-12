@@ -5,7 +5,7 @@ int	ft_ch(char *str, char c, int i)
 	int	count;
 
 	count = 0;
-	while (count <= i)
+	while (str[count])
 	{
 		if (str[count] == c)
 		{
