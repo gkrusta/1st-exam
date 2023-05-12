@@ -5,7 +5,7 @@ int	ft_ch(char *str, char c, int i)
 	int	count;
 
 	count = 0;
-	while (count <= i)
+	while (count < i)
 	{
 		if (str[count] == c)
 		{
@@ -29,9 +29,9 @@ int	main(int argc, char **argv)
 	}
 	while (argv[1][i])
 	{
-		j = 0;
 		if (ft_ch(argv[1], argv[1][i], i) == 1)
 		{
+			j = 0;
 			while (argv[2][j])
 			{
 				if (argv[1][i] == argv[2][j])
