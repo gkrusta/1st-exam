@@ -23,10 +23,10 @@ int	ft_atoi(const char *str)
 	return (sign * nb);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 int	main(void)
 {
 	char	str[] = "     +1234567asdfgh";
 	printf("result %d", ft_atoi(str));
 	return (0);
-}
+} */
