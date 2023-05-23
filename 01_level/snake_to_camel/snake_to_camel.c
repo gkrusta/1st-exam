@@ -10,13 +10,12 @@ int	ft_check_snake(char *str)
 	{
 		if (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 			return (0);
-		if (str[i] == '_' && str[i + 1] == '_')
+		else if (str[i] == '_' && str[i + 1] == '_')
 			return (0);
 		i++;
 	}
 	return (1);
 }
-
 
 int	ft_strlen(char *str)
 {
