@@ -25,7 +25,7 @@ int	ft_tonumber(char *str)
 	nb = 0;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
-		nb = (str[i] - '0') + i * 10;
+		nb = (str[i] - '0') + nb * 10;
 		i++;
 	}
 	return (nb);
