@@ -15,11 +15,11 @@ void	print_bits(unsigned char octet)
 	}
 }
 
-/* int	main(void)
+int	main(void)
 {
 	unsigned char	byte;
 
-	byte = 2;
+	byte = 0x2;
 	print_bits(byte);
 	return (0);
-} */
+}
