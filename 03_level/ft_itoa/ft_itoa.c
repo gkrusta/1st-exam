@@ -1,5 +1,4 @@
-
-#include "libft.h"
+#include <stdlib.h>
 
 static int	ft_numblen(long n)
 {
