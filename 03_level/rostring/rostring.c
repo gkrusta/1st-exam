@@ -1,75 +1,49 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-int	ft_strlen(char *str)
-{
-	int	i;
-	int	count;
-
-	i = 0;
-	count = 0;
-	while (str[i])
-	{
-		while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
-		{
-			if (!(str[i + 1] == 32 || (str[i] >= 9 && str[i] <= 13)))
-				count++;
-		i++;
-		}
-		i++;
-		count++;
-	}
-	return (count);
-}
-
-char	*ft_rostring(char *s)
+void	ft_rostring(char *s)
 {
 	int		i;
-	int		j;
-	char	*str;
+	int		start;
+	int		end;
 
 	i = 0;
-	j = 0;
-	str = malloc(sizeof(char) * (ft_strlen(s) + 1));
-	while (s[i] == 32 || (s[i] >= 9 && s[i] <= 13))
+	while (s[i] == ' ' || s[i] == '\t')
+		i++;
+	start = i;
+	while (s[i] && !(s[i] == ' ' || s[i] == '\t'))
+		i++;
+	end = i;
+	while (s[i] && (s[i] == ' ' || s[i] == '\t'))
 		i++;
 	while (s[i])
 	{
-		if (s[i] == 32 || (s[i] >= 9 && s[i] <= 13))
-			break ;
-	i++;
-	}
-	i++;
-	while (str[i])
-		str[j++] = s[i++];
-	i = 0;
-	while (s[i] == 32 || (s[i] >= 9 && s[i] <= 13))
+		write (1, &s[i], 1);
 		i++;
-	while (s[i])
+		while (s[i] && (s[i] == ' ' || s[i] == '\t'))
+		{
+			if (!(s[i + 1] == ' ' || s[i + 1] == '\t'))
+				break ;
+			i++;
+		}
+		if (s[i] == '\0' && s[i - 1] != ' ')
+			write (1, " ", 1);
+	}
+	while (start < end)
 	{
-		str[j] = str [i];
-		j++;
-		i++;
-		if (s[i] == 32 || (s[i] >= 9 && s[i] <= 13))
-			break ;
+		write (1, &s[start], 1);
+		start++;
 	}
-	return (str);
 }
 
 int	main(int argc, char **argv)
 {
-	int		i;
-	char	*str;
+	int	i;
 
 	i = 0;
 	if (argc >= 2)
 	{
-		str = ft_rostring(argv[1]);
-		while (str[i])
-		{
-			write (1, &str[i], 1);
-			i++;
-		}
+		ft_rostring(argv[1]);
 	}
 	write (1, "\n", 1);
 	return (0);
