@@ -7,21 +7,21 @@ t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 	t_list	*tmp;
 
 	tmp = lst; // we save the value as we will manipulate the value later in the function but
-	// it has to return  a pointer to the first element of the sorted list
-	while (lst->next != NULL ) // lst->next != NULL 
+	// it has to return a pointer to the first element of the sorted list
+	while (lst->next != NULL) // lst->next != NULL
 	{
 		if (((*cmp)(lst->data, lst->next->data)) == 0) // elements are out of order
 		{
 			p = lst->data; // swap
 			lst->data = lst->next->data;
 			lst->next->data = p;
-			lst = tmp; // to start from the first element
+			lst = tmp; // to start checking from the first element next time entering the loop
 		}
 		else
 			lst = lst->next; // if elements are in order we just move to the next one
 	}
 	lst = tmp;
-	return (lst);
+	return (lst); // a pointer to the first element of the sorted list
 }
 
 int	ascending(int a, int b) // cmp function
