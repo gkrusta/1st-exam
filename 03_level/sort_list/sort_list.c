@@ -1,10 +1,9 @@
 #include "list.h"
 #include <stdio.h> // for printf and 'NULL' macro
 
-
 t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 {
-	int		p; // temporary variable 
+	int	p; // temporary variable 
 	t_list	*tmp;
 
 	tmp = lst; // we save the value as we will manipulate the value later in the function but
