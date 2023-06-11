@@ -16,7 +16,7 @@ t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 			p = lst->data; // swap
 			lst->data = lst->next->data;
 			lst->next->data = p;
-			lst = tmp; //
+			lst = tmp; // to start from the first element
 		}
 		else
 			lst = lst->next; // if elements are in order we just move to the next one
