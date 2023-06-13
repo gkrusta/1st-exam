@@ -1,31 +1,32 @@
+#include <stdio.h>
+
 void	sort_int_tab(int *tab, unsigned int size)
 {
-	int	*tmp;
-	int	i;
+	int				tmp;
+	unsigned int	i;
+	unsigned int	pos;
 
 	i = 0;
-	while (size > 0)
+	while (i < size)
 	{
-		if (tab[i + 1] < tab[i])
+		pos = 0;
+		while (pos < size - 1)
 		{
-			tmp = &tab[i];
-			tab[i] = tab[i + 1];
-			tab[i + 1] = *tmp;
-			i = 0;
-			/* size--; */
+			if (tab[pos + 1] < tab[pos])
+			{
+				tmp = tab[pos];
+				tab[pos] = tab[pos + 1];
+				tab[pos + 1] = tmp;
+			}
+			pos++;
 		}
-		else
-		{
-			i++;
-			size--;
-		}
+		i++;
 	}
 }
 
-#include <stdio.h>
 int	main(void)
 {
-	int	arr[4] = {2, 6, 1, 3};
+	int	arr[4] = {2, 6, 1, 0};
 	int	i;
 	int	size = 4;
 	i = 0;
