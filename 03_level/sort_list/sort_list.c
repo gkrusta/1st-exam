@@ -10,7 +10,7 @@ t_list	*sort_list(t_list* lst, int (*cmp)(int, int))
 	// it has to return a pointer to the first element of the sorted list
 	while (lst->next != NULL) // lst->next != NULL
 	{
-		if (((*cmp)(lst->data, lst->next->data)) == 0) // elements are out of order
+		if ((*cmp)(lst->data, lst->next->data) == 0) // elements are out of order
 		{
 			p = lst->data; // swap
 			lst->data = lst->next->data;
