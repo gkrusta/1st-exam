@@ -28,14 +28,14 @@ unsigned int	lcm(unsigned int a, unsigned int b)
 	return (lcm);
 }
 
-/* #include <stdio.h>
+#include <stdio.h>
 int	main (void)
 {
 	unsigned int	a;
 	unsigned int	b;
 
 	a = -6;
-	b = 8;
+	b = -8;
 	printf("Lowest Common Multiple of %d and %d: %d", a, b, lcm(a, b));
 	return (0);
-} */
+}
