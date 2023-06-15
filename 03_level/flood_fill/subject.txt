@@ -26,6 +26,8 @@ The t_point structure is prototyped like this: (put it in flood_fill.c)
 
 Example:
 
+\\I HAVE MODIFIED THE EXAMAPLE BECAUSE I FOUND THE ORIGINAL ONE WRONG//
+
 $> cat test.c
 #include <stdlib.h>
 #include <stdio.h>
@@ -76,9 +78,9 @@ $> gcc flood_fill.c test.c -o test; ./test
 10110001
 11100001
 
-FFFFFFFF
-F000F00F
-F00F000F
-F0FF000F
-FFF0000F
+11111111
+1FFF1001
+1FF10001
+1F110001
+11100001
 $>
