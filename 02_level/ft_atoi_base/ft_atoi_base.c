@@ -34,7 +34,7 @@ int	ft_atoi_base(const char *str, int str_base)
 		sign = -1;
 		str++;
 	}
-	while (digit = ft_get_digit(ft_case(char *str), str_base) >= 0)
+	while ((digit = ft_get_digit(ft_case(*str), str_base)) >= 0)
 	{
 		res = res * str_base;
 		res = res + digit;
@@ -42,3 +42,12 @@ int	ft_atoi_base(const char *str, int str_base)
 	}
 	return (res * sign);
 }
+
+/* #include <stdio.h>
+int	main(void)
+{
+	char	*str = "10000000";
+	int		str_base = 2;
+	printf("%d\n", ft_atoi_base(str, str_base));
+	return (0);
+} */
