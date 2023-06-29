@@ -2,16 +2,16 @@
 
 int	*ft_rrange(int start, int end)
 {
-	int	*arr;
-	int	count;
-	int	i;
+	int		*arr;
+	long	count; // to be able to operate with int_min and int_max
+	int		i;
 
 	count = 0;
 	i = 0;
 	if (start >= end)
-		count = start - end + 1;
+		count = (long)start - (long)end + 1;
 	else if (start < end)
-		count = end - start + 1;
+		count = (long)end - (long)start + 1;
 	arr = malloc(sizeof(int) * count);
 	while (i <= count)
 	{
@@ -22,7 +22,7 @@ int	*ft_rrange(int start, int end)
 	return (arr);
 }
 
-/* #include <stdio.h>
+#include <stdio.h>
 int	main (void)
 {
 	int	*arr;
@@ -40,4 +40,3 @@ int	main (void)
 	free(arr);
 	return (0);
 }
- */
