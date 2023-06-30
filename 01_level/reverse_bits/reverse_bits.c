@@ -8,7 +8,7 @@ void	revrese_bits(unsigned int octet)
 	while (i >= 0)
 	{
 		a = a | (octet & 1);
-		i << = 1;
+		i <<= 1;
 		octet >>= 1;
 	}
 }
